@@ -36,10 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.4
   flutter_launcher_icons: ^0.10.0
-  csv: ^5.0.1
-  faker: ^2.0.0
   fast_csv: ^0.1.44
-  fuzzy: ^0.3.0
   fuzzywuzzy: ^0.2.0
 
 dev_dependencies:
