@@ -1,7 +1,7 @@
+import 'package:fast_csv/fast_csv.dart' as fast_csv;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:train_checker/services/remote_service.dart';
-import 'package:fast_csv/fast_csv.dart' as fast_csv;
 
 import '../models/track.dart';
 

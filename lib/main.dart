@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Tchou Tchou',
+      title: 'Train Companion',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(title: 'Tchou Tchou'),
+      home: const HomePage(title: 'Train Companion'),
     );
   }
 }
