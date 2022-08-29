@@ -1,24 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:train_checker/services/remote_service.dart';
-import 'package:csv/csv.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:fast_csv/fast_csv.dart' as fast_csv;
-import 'package:fuzzywuzzy/fuzzywuzzy.dart';
 
 import '../models/track.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -27,7 +15,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // Departure? departures;
   Track? tracks;
 
   var isLoaded = false;
@@ -39,12 +26,8 @@ class _HomePageState extends State<HomePage> {
     getData("TSE");
   }
 
-  // ${tracks!.trains[index].voie} => Numéro de la voie
-  // ${Reformat().reformatDestination(departures!.departures[index].displayInformations.direction)} => Destination
-  //
   getData(tvs) async {
     tracks = await RemoteService().getTracks(tvs);
-    // departures = await RemoteService().getDepartures();
     if (tracks != null) {
       setState(() {
         isLoaded = true;
@@ -86,8 +69,6 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(right: 20.0),
               child: InkWell(
                 onTap: () {
-                  // isLoaded = false; pour cacher la liste le temps que ça
-                  // charge
                   getData("TSE");
                 },
                 child: const Icon(

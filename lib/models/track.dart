@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final departure = departureFromJson(jsonString);
-
 import 'dart:convert';
 
 Track trackFromJson(String str) => Track.fromJson(json.decode(str));
@@ -18,14 +14,14 @@ class Track {
   String updated;
 
   factory Track.fromJson(Map<String, dynamic> json) => Track(
-    trains: List<Train>.from(json["trains"].map((x) => Train.fromJson(x))),
-    updated: json["updated"],
-  );
+        trains: List<Train>.from(json["trains"].map((x) => Train.fromJson(x))),
+        updated: json["updated"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "trains": List<dynamic>.from(trains.map((x) => x.toJson())),
-    "updated": updated,
-  };
+        "trains": List<dynamic>.from(trains.map((x) => x.toJson())),
+        "updated": updated,
+      };
 }
 
 class Train {
@@ -54,28 +50,28 @@ class Train {
   String infos;
 
   factory Train.fromJson(Map<String, dynamic> json) => Train(
-    origdest: json["origdest"],
-    num: json["num"],
-    type: json["type"],
-    picto: json["picto"],
-    voie: json["voie"],
-    voieAttr: json["voie_attr"],
-    heure: json["heure"],
-    etat: json["etat"],
-    retard: json["retard"],
-    infos: json["infos"],
-  );
+        origdest: json["origdest"],
+        num: json["num"],
+        type: json["type"],
+        picto: json["picto"],
+        voie: json["voie"],
+        voieAttr: json["voie_attr"],
+        heure: json["heure"],
+        etat: json["etat"],
+        retard: json["retard"],
+        infos: json["infos"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "origdest": origdest,
-    "num": num,
-    "type": type,
-    "picto": picto,
-    "voie": voie,
-    "voie_attr": voieAttr,
-    "heure": heure,
-    "etat": etat,
-    "retard": retard,
-    "infos": infos,
-  };
+        "origdest": origdest,
+        "num": num,
+        "type": type,
+        "picto": picto,
+        "voie": voie,
+        "voie_attr": voieAttr,
+        "heure": heure,
+        "etat": etat,
+        "retard": retard,
+        "infos": infos,
+      };
 }
